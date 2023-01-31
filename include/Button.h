@@ -11,16 +11,21 @@ private:
 	int m_posX;
 	int m_posY;
 
-	int m_width;
-	int m_height;
+	float m_width;
+	float m_height;
 
 	Button();
 
 	sf::Vector2i m_mousePosition;
 
+	bool m_enabled;
+
 public:
-	Button(sf::RenderWindow& window, int posX, int posY, int width, int height);
+	Button(sf::RenderWindow& window, int posX, int posY, float width, float height);
+	~Button();
 	bool isHover();
 	void DiplayButtonForTest();
+	void EnableButton();
+	void DisableButton();
 };
 
