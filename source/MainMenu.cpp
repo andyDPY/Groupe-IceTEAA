@@ -119,6 +119,6 @@ void MainMenu::Update()
 void MainMenu::Display()
 {
 	m_window.clear();
-	//m_window.draw(m_mainMenubg);
+	m_window.draw(m_mainMenubg);
 	m_window.display();
 }
