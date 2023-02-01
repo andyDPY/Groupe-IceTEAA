@@ -1,11 +1,24 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/include/box2d/box2d.h>
+#include <iostream>
 
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(), "CodVenture", sf::Style::Fullscreen);
 
+
+    //test
+    sf::Texture map;
+    if (!map.loadFromFile("assets/mapTest.png"))
+    {
+        // erreur...
+        std::cerr << "error" << std::endl;
+    }
+    map.setSmooth(true);
+
+    sf::Sprite sprite;
+    sprite.setTexture(map);
 
     while (window.isOpen())
     {
@@ -18,7 +31,7 @@ int main()
 
         
         window.clear();
-        
+        window.draw(sprite);
         window.display();
     }
 
