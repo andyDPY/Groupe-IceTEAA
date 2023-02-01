@@ -88,16 +88,25 @@ void MainMenu::Update()
 		//If you click on a level, the inGame boolean is set to true
 		if (m_buttonOne->isHover() && sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			m_buttonCredit->DisableButton();
+			m_buttonOne->DisableButton();
+			m_buttonTwo->DisableButton();
+			m_buttonQuit->DisableButton();
 			*m_inGame = true;
 		}
 		if (m_buttonTwo->isHover() && sf::Mouse::isButtonPressed(sf::Mouse::Left) && *m_levelUnlockedCount >= 2)
 		{
+			m_buttonCredit->DisableButton();
+			m_buttonOne->DisableButton();
+			m_buttonTwo->DisableButton();
+			m_buttonQuit->DisableButton();
 			*m_inGame = true;
 		}
 
 
 
 	}
+	//Surement à retirer
 	else
 	{
 		m_texture.loadFromFile("assets/test.png");
