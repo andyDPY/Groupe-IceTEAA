@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/include/box2d/box2d.h>
-
+#include "GameManagement.h"
 #include "MainMenu.h"
 
 int main()
@@ -9,27 +9,21 @@ int main()
 
     bool inGame = false;
     int levelUnlockedCount = 1;
+    int chooseLevel = -1;
 
+    GameManagement gameManagement(window, &levelUnlockedCount, &chooseLevel, &inGame);
     MainMenu mainMenu(window, &inGame, &levelUnlockedCount);
 
     while (window.isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+        if (!inGame)
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            mainMenu.Update();
         }
-
-        mainMenu.Update();
-
-        
-        window.clear();
-
-        mainMenu.Display();
-        
-        window.display();
+        else
+        {
+            gameManagement.Update();
+        } 
     }
-
     return 0;
 }

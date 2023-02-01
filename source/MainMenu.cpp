@@ -30,8 +30,17 @@ MainMenu::~MainMenu()
 
 void MainMenu::Update()
 {
+	sf::Event event;
+	//close window
+	while (m_window.pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
+			m_window.close();
+	}
+
 	if (!*m_inGame)
 	{
+
 		//choice of menu according to the number of levels unlocked
 		switch (*m_levelUnlockedCount)
 		{
@@ -61,7 +70,6 @@ void MainMenu::Update()
 			m_buttonOne->DisableButton();
 			m_buttonTwo->DisableButton();
 			m_buttonQuit->DisableButton();
-
 			m_buttonCreditReturn->EnableButton();
 			
 		}
@@ -98,14 +106,19 @@ void MainMenu::Update()
 
 
 	}
+	//temporary
 	else
 	{
 		m_texture.loadFromFile("assets/test.png");
 		m_mainMenubg.setTexture(m_texture);
 	}
+
+	Display();
 }
 
 void MainMenu::Display()
 {
-	m_window.draw(m_mainMenubg);
+	m_window.clear();
+	//m_window.draw(m_mainMenubg);
+	m_window.display();
 }
