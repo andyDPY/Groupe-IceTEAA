@@ -1,10 +1,11 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(sf::RenderWindow& window, bool* inGame, int* levelUnlocked) :
+MainMenu::MainMenu(sf::RenderWindow& window, bool* inGame, int* levelUnlocked, int* chooseLevel) :
 	m_inGame(inGame),
 	m_window(window),
 	m_levelUnlockedCount(levelUnlocked),
-	m_creditOpen(false)
+	m_creditOpen(false),
+	m_chooseLevel(chooseLevel)
 {
 	m_texture.loadFromFile("assets/mainMenu.png");
 	m_mainMenubg.setTexture(m_texture);
@@ -96,10 +97,12 @@ void MainMenu::Update()
 		//If you click on a level, the inGame boolean is set to true
 		if (m_buttonOne->isHover() && sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			*m_chooseLevel = 1;
 			*m_inGame = true;
 		}
 		if (m_buttonTwo->isHover() && sf::Mouse::isButtonPressed(sf::Mouse::Left) && *m_levelUnlockedCount >= 2)
 		{
+			*m_chooseLevel = 2;
 			*m_inGame = true;
 		}
 

@@ -13,6 +13,7 @@ private:
 
 	bool* m_inGame;
 	int* m_levelUnlockedCount;
+	int* m_chooseLevel;
 
 	sf::Texture m_texture;
 	sf::Sprite m_mainMenubg;
@@ -29,7 +30,7 @@ private:
 	
 
 public:
-	MainMenu(sf::RenderWindow& window, bool* inGame, int* levelUnlocked);
+	MainMenu(sf::RenderWindow& window, bool* inGame, int* levelUnlocked, int* chooseLevel);
 	~MainMenu();
 	void Update();
 	void Display();

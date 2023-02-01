@@ -12,7 +12,7 @@ int main()
     int chooseLevel = -1;
 
     GameManagement gameManagement(window, &levelUnlockedCount, &chooseLevel, &inGame);
-    MainMenu mainMenu(window, &inGame, &levelUnlockedCount);
+    MainMenu mainMenu(window, &inGame, &levelUnlockedCount, &chooseLevel);
 
     while (window.isOpen())
     {
