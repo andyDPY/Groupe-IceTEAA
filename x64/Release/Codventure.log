@@ -1,1 +1,4 @@
-﻿  Codventure.vcxproj -> C:\Users\arthu\Documents\GitHub\Groupe-IceTEAA\x64\Release\Codventure.exe
+﻿  Codventure.cpp
+Codventure.obj : error LNK2001: symbole externe non résolu "public: __cdecl b2World::~b2World(void)" (??1b2World@@QEAA@XZ)
+Codventure.obj : error LNK2001: symbole externe non résolu "public: __cdecl b2World::b2World(struct b2Vec2 const &)" (??0b2World@@QEAA@AEBUb2Vec2@@@Z)
+C:\Users\arthu\Documents\GitHub\Groupe-IceTEAA\x64\Release\Codventure.exe : fatal error LNK1120: 2 externes non résolus

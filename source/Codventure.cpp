@@ -1,5 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/include/box2d/box2d.h>
+#include <box2d/include/box2d/b2_body.h>
+#include <box2d/include/box2d/b2_world.h>
+
 #include <iostream>
 
 
@@ -19,6 +22,8 @@ int main()
 
     sf::Sprite sprite;
     sprite.setTexture(map);
+
+
 
     while (window.isOpen())
     {
