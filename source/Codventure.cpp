@@ -9,8 +9,9 @@ int main()
 
     bool inGame = false;
     int levelUnlockedCount = 1;
+    int chooseLevel = -1;
 
-    MainMenu mainMenu(window, &inGame, &levelUnlockedCount);
+    MainMenu mainMenu(window, &inGame, &levelUnlockedCount, &chooseLevel);
 
     while (window.isOpen())
     {
